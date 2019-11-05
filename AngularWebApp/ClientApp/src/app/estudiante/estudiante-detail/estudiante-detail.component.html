@@ -1,0 +1,39 @@
+
+<div class="col-md-6">
+  <div *ngIf="estudiante" class="card">
+    <div class="card-header">
+      <h2>Informacion de Estudiante</h2>
+    </div>
+    <div class="card-body">
+    
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" disabled value={{estudiante.nombre}}>
+        </div>
+        <div class="form-group">
+          <label for="ci">CI</label>
+          <input type="text" class="form-control" id="ci" disabled value={{estudiante.ci}}>
+        </div>
+        <div class="form-group">
+          <label for="dierccion">Direccion</label>
+          <input type="text" class="form-control" id="dierccion" disabled value={{estudiante.dierccion}}>
+        </div>
+        <div class="form-group">
+          <label for="carrera">Carrera</label>
+          <input type="text" class="form-control" id="carrera" disabled value={{estudiante.carrera}}>
+        </div>
+        <div class="form-group">
+          <label for="edad">Edad</label>
+          <input type="text" class="form-control" id="edad" disabled value={{estudiante.edad}}>
+        </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-info" routerLink="/estudiante-edit/{{estudiante.idLector}}">
+        Edit
+      </button> |
+      <button class="btn btn-light" routerLink="/estudiantes">
+        Go To List
+      </button>
+    </div>
+  </div>
+</div>

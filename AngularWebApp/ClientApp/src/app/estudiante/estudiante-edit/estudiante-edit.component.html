@@ -1,0 +1,55 @@
+
+
+<div class="col-md-6">
+  <div *ngIf="estudiante" class="card">
+    <div class="card-header">
+      <h2>Editar Informacion</h2>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="estudiante" (ngSubmit)="updateEstudiante()">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" formControlName="nombre" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+          <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+            <div *ngIf="f.nombre.errors.required">El nombre es requerido</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>CI</label>
+          <input type="text" formControlName="ci" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ci.errors }" />
+          <div *ngIf="submitted && f.ci.errors" class="invalid-feedback">
+            <div *ngIf="f.ci.errors.required">CI es requerido</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Direccion</label>
+          <input type="text" formControlName="dierccion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dierccion.errors }" />
+          <div *ngIf="submitted && f.dierccion.errors" class="invalid-feedback">
+            <div *ngIf="f.dierccion.errors.required">Direccion es requerida</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Carrera</label>
+          <input type="text" formControlName="carrera" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.carrera.errors }" />
+          <div *ngIf="submitted && f.carrera.errors" class="invalid-feedback">
+            <div *ngIf="f.carrera.errors.required">La Carrera es requerida</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Edad</label>
+          <input type="number" formControlName="edad" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.edad.errors }" />
+          <div *ngIf="submitted && f.edad.errors" class="invalid-feedback">
+            <div *ngIf="f.edad.errors.required">La Edad es requerida</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button [disabled]="loading" class="btn btn-primary">Update</button> |
+          <button class="btn btn-light" routerLink="/estudiantes">
+            Go To List
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

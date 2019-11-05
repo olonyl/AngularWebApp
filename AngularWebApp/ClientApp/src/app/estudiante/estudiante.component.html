@@ -1,0 +1,31 @@
+<h1>Listado de Estudiantes</h1>
+
+
+<p *ngIf="!estudiantes"><em>Loading...</em></p>
+
+<button [disabled]="loading" class="btn btn-primary" (click)="add()">Create New</button>
+
+<div class="row mt-4">
+  <table class='table table-striped' *ngIf="estudiantes">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>CI</th>
+        <th>Direccion</th>
+        <th>Carrera</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let estudiante of estudiantes">
+        <td><a class="btn btn-info btn-sm mr-1" href="estudiante-details/{{estudiante.idLector}}">Editar</a></td>
+        <td>{{ estudiante.nombre }}</td>
+        <td>{{ estudiante.ci }}</td>
+        <td>{{ estudiante.dierccion }}</td>
+        <td>{{ estudiante.carrera }}</td>
+        <td>{{ estudiante.edad }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
